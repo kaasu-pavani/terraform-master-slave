@@ -76,8 +76,8 @@ resource "aws_security_group" "jenkins_sg" {
   }
  # Car-prediction access from anywhere
  ingress {
-   from_port   = 8000
-   to_port     = 8000
+   from_port   = 7000
+   to_port     = 7000
    protocol    = "tcp"
    cidr_blocks = ["0.0.0.0/0"]
  }
@@ -106,7 +106,7 @@ variable "subnet_cidr" {
 
 # Creating EC2 instance
 resource "aws_instance" "jenkins_instance" {
-  ami                         = "ami-0f66240e199159416"
+  ami                         = "ami-0ca1f30768d0cf0e1"
   instance_type               = "t2.micro"
   count                       = 1
   key_name                    = "k8"
